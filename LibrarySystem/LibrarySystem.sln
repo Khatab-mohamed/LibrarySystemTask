@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibrarySystem.Mvc", "Librar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibrarySystem.Domain", "LibrarySystem.Domain\LibrarySystem.Domain.csproj", "{5F74A7BC-00C7-4F80-8662-3D1F0FC02430}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibrarySystem.Data", "LibrarySystem.Data\LibrarySystem.Data.csproj", "{305FF695-22FB-4582-911D-00AAE8AF0348}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{5F74A7BC-00C7-4F80-8662-3D1F0FC02430}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F74A7BC-00C7-4F80-8662-3D1F0FC02430}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F74A7BC-00C7-4F80-8662-3D1F0FC02430}.Release|Any CPU.Build.0 = Release|Any CPU
+		{305FF695-22FB-4582-911D-00AAE8AF0348}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{305FF695-22FB-4582-911D-00AAE8AF0348}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{305FF695-22FB-4582-911D-00AAE8AF0348}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{305FF695-22FB-4582-911D-00AAE8AF0348}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +42,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{DC2E297E-7072-4364-8783-85A47CB91BB2} = {B96DAD46-29BA-4E1D-83A2-68E0800D81BA}
 		{5F74A7BC-00C7-4F80-8662-3D1F0FC02430} = {A535EF5C-A08A-4EDB-9AFC-2A5FA5733295}
+		{305FF695-22FB-4582-911D-00AAE8AF0348} = {F21C0601-98CD-44C8-845C-677E8B72A4B3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7E918726-6489-4A70-A1D2-5CDC63CE494F}
