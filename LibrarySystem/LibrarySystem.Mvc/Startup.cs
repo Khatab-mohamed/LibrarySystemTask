@@ -1,4 +1,3 @@
-using LibrarySystem.Data.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
@@ -7,6 +6,7 @@ using LibrarySystem.Mvc.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using LibrarySystem.Data.Context;
 
 namespace LibrarySystem.Mvc
 {
@@ -29,7 +29,7 @@ namespace LibrarySystem.Mvc
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddDbContext<LibraryDbContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("UniversityDbConnection"));
+                options.UseSqlServer(Configuration.GetConnectionString("LibraryDbConnection"));
             });
             services.AddControllersWithViews();
             services.AddRazorPages();
