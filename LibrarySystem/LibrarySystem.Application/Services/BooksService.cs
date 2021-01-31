@@ -3,42 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using LibrarySystem.Application.Interfaces;
 using LibrarySystem.Application.ResourceParameter;
+using LibrarySystem.Application.ViewModels;
 using LibrarySystem.Data.Context;
+using LibrarySystem.Data.Interfaces;
 using LibrarySystem.Domain.Entities;
 
 namespace LibrarySystem.Application.Services
 {
     public class BooksService : IBooksService
     {
-        private readonly LibraryDbContext _context;
-        public BooksService(LibraryDbContext context)
+        private readonly IBooksRepository _booksRepository;
+
+        public BooksService(IBooksRepository booksRepository)
         {
-            _context = context ?? throw new ArgumentNullException(nameof(context));
+            _booksRepository = booksRepository;
         }
-        private IEnumerable<Book> GetBooks()
+        public BooksViewModel GetBooks(BookResourceParameter bookResourceParameter)
         {
-            return _context.Books.OrderBy(c => c.Name).ToList();
-        }
-
-        public IEnumerable<Book> GetBooks(BookResourceParameter bookResourceParameter)
-        {
-
-            if (string.IsNullOrWhiteSpace(bookResourceParameter.MainCategory) || string.IsNullOrWhiteSpace(bookResourceParameter.SubCategory))
-                return GetBooks();
-            var collection = _context.Books as IQueryable<Book>;
-            if (!string.IsNullOrWhiteSpace(bookResourceParameter.MainCategory))
+            var mainCategory = bookResourceParameter.MainCategory;
+            var subCategory = bookResourceParameter.SubCategory;
+            return new BooksViewModel()
             {
-                var mainCategory = bookResourceParameter.MainCategory.Trim();
-                collection = collection.Where(a => a.MainCategory == mainCategory);
-            }
-
-            if (string.IsNullOrWhiteSpace(bookResourceParameter.SubCategory)) return collection.ToList();
-            {
-                var subCategory = bookResourceParameter.SubCategory.Trim();
-                collection = collection.Where(a => a.SubCategory == subCategory);
-            }
-
-            return collection.ToList();
+                Books = _booksRepository.GetBooks(mainCategory,subCategory)
+            };
         }
 
     }

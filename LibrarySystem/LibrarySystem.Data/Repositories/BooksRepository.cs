@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using LibrarySystem.Data.Context;
+using LibrarySystem.Data.Interfaces;
 using LibrarySystem.Domain.Entities;
 
 namespace LibrarySystem.Data.Repositories
 {
-    public class BooksRepository
+    public class BooksRepository :IBooksRepository
     {
         private readonly LibraryDbContext _context;
         public BooksRepository(LibraryDbContext context)

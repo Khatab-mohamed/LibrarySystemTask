@@ -1,12 +1,11 @@
-﻿using LibrarySystem.Domain.Entities;
-using System.Collections.Generic;
-using LibrarySystem.Application.ResourceParameter;
+﻿using LibrarySystem.Application.ResourceParameter;
+using LibrarySystem.Application.ViewModels;
 
 namespace LibrarySystem.Application.Interfaces
 {
     public interface IBooksService
     {
-        IEnumerable<Book> GetBooks(BookResourceParameter parameter);
+        BooksViewModel GetBooks(BookResourceParameter parameter);
 
     }
 }

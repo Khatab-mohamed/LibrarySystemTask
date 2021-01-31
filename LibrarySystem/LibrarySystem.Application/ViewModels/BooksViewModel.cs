@@ -7,6 +7,6 @@ namespace LibrarySystem.Application.ViewModels
 {
     public class BooksViewModel
     {
-        public ICollection<Book> Books { get; set; }
+        public IEnumerable<Book> Books { get; set; }
     }
 }
