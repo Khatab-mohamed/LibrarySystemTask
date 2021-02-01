@@ -14,8 +14,13 @@ namespace LibrarySystem.Data.Context
         {
             _options = options;
         }
+
         public DbSet<Book> Books { get; set; }
         public DbSet<Author> Authors { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Seed();
+        }
     }
 }
