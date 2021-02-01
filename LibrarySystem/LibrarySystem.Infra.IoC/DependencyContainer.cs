@@ -12,6 +12,7 @@ namespace LibrarySystem.Infra.IoC
         {
             // Application Layer
             services.AddScoped<IBooksService, BooksService>();
+            services.AddScoped<IAnswersService, AnswersService>();
 
             //Domain Layer
             services.AddScoped<IBooksRepository, BooksRepository>();
