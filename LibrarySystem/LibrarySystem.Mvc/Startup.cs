@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
@@ -35,6 +36,13 @@ namespace LibrarySystem.Mvc
             services.AddControllersWithViews();
             services.AddRazorPages();
             RegisterServices(services);
+            //Adding the HttpClient
+            services.AddHttpClient("StackOverFlowClient", client =>
+            {
+                //  Account Api Content Type 
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+                client.BaseAddress = new Uri(Configuration.GetSection("AnswersServiceUrl").Value);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
