@@ -20,7 +20,7 @@ namespace LibrarySystem.Mvc.Controllers
 
         public IActionResult Index([FromBody] BookResourceParameter bookResourceParameter)
         {
-            BooksViewModel model = _booksService.GetBooks(bookResourceParameter);
+            var model = _booksService.GetBooks(bookResourceParameter);
             return View(model);
         }
     }
