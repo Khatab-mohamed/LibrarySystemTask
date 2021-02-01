@@ -1,0 +1,42 @@
+﻿@model LibrarySystem.Application.ViewModels.AnswersViewModel
+
+@{
+    ViewData["Title"] = "Answer";
+}
+
+<h1>Answer</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               
+            </th>
+            <th>
+            </th>
+            <th>
+            </th>
+            <th>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Answers) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Items)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BackOff)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuotaMax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuotaRemaining)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
